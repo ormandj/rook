@@ -1309,8 +1309,7 @@ func GetCephVolumeRawOSDs(context *clusterd.Context, clusterInfo *client.Cluster
 			osd.DeviceType = deviceType
 			logger.Infof("setting device type %q for device %q", osd.DeviceType, diskInfo.Name)
 
-			crushDeviceClass := sys.GetDiskDeviceClass(oposd.CrushDeviceClassVarName, deviceType)
-			osd.DeviceClass = crushDeviceClass
+			osd.DeviceClass = sys.GetDiskDeviceClass(oposd.CrushDeviceClassVarName, deviceType)
 			logger.Infof("setting device class %q for device %q", osd.DeviceClass, diskInfo.Name)
 		}
 

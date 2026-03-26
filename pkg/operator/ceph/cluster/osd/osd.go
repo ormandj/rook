@@ -750,7 +750,7 @@ func (c *Cluster) getOSDInfo(d *appsv1.Deployment) (OSDInfo, error) {
 		if envVar.Name == osdWalDeviceEnvVarName {
 			osd.WalPath = envVar.Value
 		}
-		if envVar.Name == osdDeviceClassEnvVarName {
+		if envVar.Name == OSDDeviceClassVarName {
 			osd.DeviceClass = envVar.Value
 		}
 	}
